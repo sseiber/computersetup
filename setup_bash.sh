@@ -14,11 +14,11 @@ function _copy_bash_config() {
 
     if [ ! -z "$FOLDER" ]; then
         cd ~/ && {
-            curl -O "https://raw.githubusercontent.com/sseiber/computersetup/initial-setup/.bash_path_aliases.json"
-            curl -O "https://raw.githubusercontent.com/sseiber/computersetup/initial-setup/${FOLDER}/.bash_aliases"
-            curl -O "https://raw.githubusercontent.com/sseiber/computersetup/initial-setup/${FOLDER}/.bash_exports.json"
-            curl -O "https://raw.githubusercontent.com/sseiber/computersetup/initial-setup/${FOLDER}/.bash_profile"
-            curl -O "https://raw.githubusercontent.com/sseiber/computersetup/initial-setup/${FOLDER}/.bashrc"
+            curl -O "https://raw.githubusercontent.com/sseiber/computersetup/.bash_path_aliases.json"
+            curl -O "https://raw.githubusercontent.com/sseiber/computersetup/${FOLDER}/.bash_aliases"
+            curl -O "https://raw.githubusercontent.com/sseiber/computersetup/${FOLDER}/.bash_exports.json"
+            curl -O "https://raw.githubusercontent.com/sseiber/computersetup/${FOLDER}/.bash_profile"
+            curl -O "https://raw.githubusercontent.com/sseiber/computersetup/${FOLDER}/.bashrc"
             cd -
         }
     fi
