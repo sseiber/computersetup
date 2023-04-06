@@ -1,6 +1,4 @@
-#!/bin/bash -e
-
-# set the default shell to /bin/bash and update to pro theme for colors to match
+#!/usr/bin/env bash
 
 install_message() {
     message="$1                                                                                             "
@@ -11,16 +9,6 @@ install_message() {
     printf "${blueBackground}--------------------------------------------------------------------------------------------------------------${RESET}\n"
 }
 
-# brew
-# install_message "Installing Homebrew"
-# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-
-# packages
-# install_message "Installing Kegs 'n Casks"
-# brew_formulas=(bash iterm2 postman git fontconfig azure-cli kubectl helm golang powerline-go jq dnsmasq ffmpeg gstreamer htop nmap telnet wget ngrok)
-
-# for formula in "${brew_formulas[@]}"; do brew install "${formula}"; done
-
 sudo snap install --classic k9s
 sudo snap install --classic kubectl
 sudo snap install --classic helm
@@ -28,11 +16,15 @@ sudo snap install --classic jq
 
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y golang-go azure-cli fonts-cascadia-code
+
+# install azure cli
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+sudo apt install -y golang-go fontconfig fonts-cascadia-code
 
 go install github.com/justjanne/powerline-go@latest
 
-# change shell to bash (M1 brew formulas are install in /opt/homebrew/bin/)
+# change shell to bash
 sudo sh -c 'echo /usr/bin/bash >> /etc/shells'
 chsh -s /usr/bin/bash
 
