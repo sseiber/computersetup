@@ -4,14 +4,23 @@ PLATFORM=""
 
 function _copy_bash_config() {
     if [ "$PLATFORM" == "linux" ]; then
-        folder="linux"
-        echo $folder
+        FOLDER="linux"
     elif [ "$PLATFORM" == "mac" ]; then
-        folder="mac"
-        echo $folder
+        FOLDER="mac"
     else
         echo "Unknown platform"
         exit 1
+    fi
+
+    if [ ! -z "$FOLDER" ]; then
+        cd ~/ && {
+            curl -O "https://raw.githubusercontent.com/sseiber/computersetup/initial-setup/.bash_path_aliases.json"
+            curl -O "https://raw.githubusercontent.com/sseiber/computersetup/initial-setup/${FOLDER}/.bash_aliases"
+            curl -O "https://raw.githubusercontent.com/sseiber/computersetup/initial-setup/${FOLDER}/.bash_exports.json"
+            curl -O "https://raw.githubusercontent.com/sseiber/computersetup/initial-setup/${FOLDER}/.bash_profile"
+            curl -O "https://raw.githubusercontent.com/sseiber/computersetup/initial-setup/${FOLDER}/.bashrc"
+            cd -
+        }
     fi
 }
 
