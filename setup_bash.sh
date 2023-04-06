@@ -5,8 +5,10 @@ PLATFORM=""
 function _copy_bash_config() {
     if [ "$PLATFORM" == "linux" ]; then
         folder="linux"
+        echo $folder
     elif [ "$PLATFORM" == "mac" ]; then
         folder="mac"
+        echo $folder
     else
         echo "Unknown platform"
         exit 1

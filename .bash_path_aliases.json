@@ -10,17 +10,5 @@
     "tools": {
         "path": "~/source/repos/tools",
         "plAlias": "@Tools"
-    },
-    "loopbox": {
-        "path": "~/source/repos/LoopBox/LoopBox-Platform",
-        "plAlias": "@LoopBox"
-    },
-    "sonos": {
-        "path": "~/source/repos/Sonos",
-        "plAlias": "@Sonos"
-    },
-    "iot": {
-        "path": "~/source/repos/iot",
-        "plAlias": "@IoT"
     }
 }
