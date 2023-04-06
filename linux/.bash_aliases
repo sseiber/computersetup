@@ -1,0 +1,15 @@
+alias egrep='gegrep --color=auto'
+alias fgrep='gfgrep --color=auto'
+alias grep='ggrep --color=auto'
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias ls='ls --color=auto'
+
+alias cd..='cd ..'
+#alias c='clear'
+#alias e='exit'
+alias ..='cd ..'
+
+alias notepad='/usr/bin/nano'
+alias config_profile='nano ~/.bash_profile'
