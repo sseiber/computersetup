@@ -20,7 +20,7 @@ sudo apt upgrade -y
 # install azure cli
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
-sudo apt install -y golang-go fontconfig fonts-cascadia-code
+sudo apt install -y golang-go fontconfig fonts-cascadia-code build-essential openssh-server net-tools
 
 go install github.com/justjanne/powerline-go@latest
 
