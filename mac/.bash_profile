@@ -17,7 +17,7 @@
 # these exports are required here before .bashrc is processed
 # other general purpose exports are defined in bash_exports.json
 export BREWPATH=/opt/homebrew
-export PATH=/opt/homebrew/sbin:/opt/homebrew/bin:"$HOME/.cargo/bin":${PATH}
+export PATH=${BREWPATH}/sbin:/opt/homebrew/bin:"$HOME/.cargo/bin":${PATH}
 
 #export SSH_AUTH_SOCK=~/.ssh/ssh-agent.$HOSTNAME.sock
 #ssh-add -l 2>/dev/null >/dev/null
