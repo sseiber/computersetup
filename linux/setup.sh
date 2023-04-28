@@ -9,7 +9,6 @@ install_message() {
     printf "${blueBackground}--------------------------------------------------------------------------------------------------------------${RESET}\n"
 }
 
-sudo snap install --classic k9s
 sudo snap install --classic kubectl
 sudo snap install --classic helm
 sudo snap install --classic jq
@@ -19,6 +18,8 @@ sudo apt upgrade -y
 
 # install azure cli
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+echo "TODO: Remember to install k9s"
 
 sudo apt install -y golang-go fontconfig fonts-cascadia-code build-essential openssh-server net-tools
 
