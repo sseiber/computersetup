@@ -23,7 +23,9 @@ echo "TODO: Remember to install k9s"
 
 sudo apt install -y golang-go fontconfig fonts-cascadia-code build-essential openssh-server net-tools
 
-go install github.com/justjanne/powerline-go@latest
+# manually install powerline-go
+curl -fsSLO https://github.com/justjanne/powerline-go/releases/download/v1.23/powerline-go-linux-amd64; chmod +x powerline-go-linux-amd64; mv powerline-go-linux-amd64 ${HOME}/.local/bin
+# go install github.com/justjanne/powerline-go@latest
 
 # change shell to bash
 sudo sh -c 'echo /usr/bin/bash >> /etc/shells'
