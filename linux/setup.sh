@@ -20,6 +20,8 @@ sudo apt upgrade -y
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
 echo "TODO: Remember to install k9s"
+# wget https://github.com/derailed/k9s/releases/download/v0.27.3/k9s_Linux_amd64.tar.gz
+# tar -xf k9s_Linux_amd64.tar.gz
 
 sudo apt install -y golang-go fontconfig fonts-cascadia-code build-essential openssh-server net-tools
 
