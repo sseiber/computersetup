@@ -1,3 +1,5 @@
 {
-    "KUBE_EDITOR": "'code -w'"
+    "KUBE_EDITOR": "'code -w'",
+    "KUBECONFIG": "$HOME/.kube/config"
 }
+

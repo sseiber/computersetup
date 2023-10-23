@@ -1,3 +1,4 @@
 {
-    "KUBE_EDITOR": "/usr/bin/nano"
+    "KUBE_EDITOR": "/usr/bin/nano",
+    "KUBECONFIG": "$HOME/.kube/config"
 }

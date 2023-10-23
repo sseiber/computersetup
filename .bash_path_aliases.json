@@ -1,4 +1,8 @@
 {
+    "home": {
+        "path": "~",
+        "plAlias": ""
+    },
     "scripts": {
         "path": "~/scripts",
         "plAlias": ""
