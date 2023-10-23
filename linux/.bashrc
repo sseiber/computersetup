@@ -1,3 +1,5 @@
+export PATH=${PATH}:$(go env GOPATH)/bin
+
 # path alias helpers
 PL_PATH_ALIASES=""
 
