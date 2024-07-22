@@ -4,7 +4,6 @@ printf "Setup script for Linux\n"
 printf "Please read and install manually\n"
 exit 1
 
-os="linux"
 arch="amd64"
 
 install_message() {
@@ -55,10 +54,10 @@ mv ${powerline_go_package} ${HOME}/.local/bin/powerline-go
 
 # copy bash profiles and aliases
 curl -O "https://raw.githubusercontent.com/sseiber/computersetup/main/.bash_path_aliases.json"
-curl -O "https://raw.githubusercontent.com/sseiber/computersetup/main/${os}/.bash_aliases"
-curl -O "https://raw.githubusercontent.com/sseiber/computersetup/main/${os}/.bash_exports.json"
-curl -O "https://raw.githubusercontent.com/sseiber/computersetup/main/${os}/.bash_profile"
-curl -O "https://raw.githubusercontent.com/sseiber/computersetup/main/${os}/.bashrc"
+curl -O "https://raw.githubusercontent.com/sseiber/computersetup/main/linux/.bash_aliases"
+curl -O "https://raw.githubusercontent.com/sseiber/computersetup/main/linux/.bash_exports.json"
+curl -O "https://raw.githubusercontent.com/sseiber/computersetup/main/linux/.bash_profile"
+curl -O "https://raw.githubusercontent.com/sseiber/computersetup/main/linux/.bashrc"
 
 # change shell to bash
 sudo sh -c 'echo /usr/bin/bash >> /etc/shells'
