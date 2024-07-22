@@ -14,5 +14,9 @@
     "tools": {
         "path": "~/source/repos/tools",
         "plAlias": "@Tools"
+    },
+    "ai": {
+        "path": "~/source/repos/ai",
+        "plAlias": "@AI"
     }
 }

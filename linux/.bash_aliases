@@ -11,5 +11,9 @@ alias cd..='cd ..'
 #alias e='exit'
 alias ..='cd ..'
 
+alias mk8s='microk8s'
+#alias kubectl='microk8s kubectl'
+#alias helm='microk8s helm'
+
 alias notepad='/usr/bin/nano'
 alias config_profile='nano ~/.bash_profile'

@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+printf "Setup script for Linux\n"
+printf "Please read and install manually\n"
+exit 1
+
+os="linux"
+arch="amd64"
+
 install_message() {
     message="$1                                                                                             "
     blueBackground='\033[44m'
@@ -9,34 +16,50 @@ install_message() {
     printf "${blueBackground}--------------------------------------------------------------------------------------------------------------${RESET}\n"
 }
 
-sudo snap install --classic kubectl
-sudo snap install --classic helm
-sudo snap install --classic jq
-
 sudo apt update
 sudo apt upgrade -y
 
-# install azure cli
+# microk8s
+sudo snap install microk8s --classic --channel=latest/stable
+sudo usermod -a -G microk8s $USER
+
+# REBOOT
+
+# kubernetes tools
+# sudo snap install --classic kubectl # (installed with microk8s)
+# sudo snap install --classic helm # (installed with microk8s)
+
+mkdir -p ~/.kube
+mkdir -p ~/.local/bin
+
+# basic tools
+sudo apt install -y curl nano build-essential openssh-server net-tools jq golang-go fontconfig fonts-cascadia-code
+
+# azure cli
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
-echo "TODO: Remember to install k9s"
-# wget https://github.com/derailed/k9s/releases/download/v0.27.3/k9s_Linux_amd64.tar.gz
-# tar -xf k9s_Linux_amd64.tar.gz
-
-sudo apt install -y golang-go fontconfig fonts-cascadia-code build-essential openssh-server net-tools
+# k9s
+k9s_version="0.32.5"
+k9s_package="k9s_Linux_${arch}"
+wget https://github.com/derailed/k9s/releases/download/${k9s_version}/${k9s_package}.tar.gz
+tar -xf ${k9s_package}.tar.gz
+mv k9s ${HOME}/.local/bin/k9s
+rm ${k9s_package}.tar.gz
 
 # manually install powerline-go
-curl -fsSLO https://github.com/justjanne/powerline-go/releases/download/v1.23/powerline-go-linux-amd64; chmod +x powerline-go-linux-amd64; mv powerline-go-linux-amd64 ${HOME}/.local/bin/powerline-go
-# go install github.com/justjanne/powerline-go@latest
+powerline_go_version="v1.23"
+powerline_go_package="powerline-go-linux-${arch}"
+curl -fsSLO https://github.com/justjanne/powerline-go/releases/download/${powerline_go_version}/${powerline_go_package}
+chmod +x ${powerline_go_package}
+mv ${powerline_go_package} ${HOME}/.local/bin/powerline-go
+
+# copy bash profiles and aliases
+curl -O "https://raw.githubusercontent.com/sseiber/computersetup/main/.bash_path_aliases.json"
+curl -O "https://raw.githubusercontent.com/sseiber/computersetup/main/${os}/.bash_aliases"
+curl -O "https://raw.githubusercontent.com/sseiber/computersetup/main/${os}/.bash_exports.json"
+curl -O "https://raw.githubusercontent.com/sseiber/computersetup/main/${os}/.bash_profile"
+curl -O "https://raw.githubusercontent.com/sseiber/computersetup/main/${os}/.bashrc"
 
 # change shell to bash
 sudo sh -c 'echo /usr/bin/bash >> /etc/shells'
 chsh -s /usr/bin/bash
-
-# setup bash profile
-#currentDir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-#ln -sf "${currentDir}/.profile" ~/bash_profile
-repo_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-echo "source ${repo_dir}/linux/.bash_profile" >>~/.bash_profile
-
-mkdir -p ~/.kube

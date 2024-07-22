@@ -1,6 +1,8 @@
 #!/bin/bash -e
 
-# set the default shell to /bin/bash and update to pro theme for colors to match
+printf "Setup script for Mac OS\n"
+printf "Please read and install manually\n"
+exit 1
 
 install_message() {
     message="$1                                                                                             "
@@ -17,7 +19,7 @@ install_message() {
 
 # packages
 install_message "Installing Kegs 'n Casks"
-brew_formulas=(bash iterm2 postman git azure-cli kubectl helm golang powerline-go jq dnsmasq ffmpeg gstreamer htop nmap telnet wget ngrok)
+brew_formulas=(bash iterm2 git azure-cli kubectl helm golang powerline-go jq wget)
 
 for formula in "${brew_formulas[@]}"; do brew install "${formula}"; done
 

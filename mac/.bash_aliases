@@ -1,6 +1,3 @@
-alias egrep='gegrep --color=auto'
-alias fgrep='gfgrep --color=auto'
-alias grep='ggrep --color=auto'
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'

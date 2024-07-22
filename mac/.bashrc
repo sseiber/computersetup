@@ -33,7 +33,7 @@ function _set_pl_and_path_aliases() {
 function _update_ps1() {
     PS1="$($BREWPATH/bin/powerline-go \
         -colorize-hostname \
-        -modules 'kube,venv,host,ssh,cwd,perms,git,hg,exit,root' \
+        -modules 'kube,venv,host,ssh,cwd,perms,git,hg,exit,newline,root' \
         -error $? \
         -jobs $(jobs -p | wc -l) \
         -path-aliases ${PL_PATH_ALIASES})"

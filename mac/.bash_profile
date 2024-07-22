@@ -4,7 +4,7 @@
 #  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 #
 #  install brew packages:
-#    brew_formulas=(bash iterm2 coreutils azure-cli kubectl helm go powerline-go google-chrome jq)
+#    brew_formulas=(bash iterm2 coreutils azure-cli kubectl helm golang powerline-go google-chrome jq)
 #    for formula in "${brew_formulas[@]}"; do brew install "${formula}"; done
 #
 #  change shell to bash:
@@ -17,7 +17,7 @@
 # these exports are required here before .bashrc is processed
 # other general purpose exports are defined in bash_exports.json
 export BREWPATH=/opt/homebrew
-export PATH=${BREWPATH}/sbin:${BREWPATH}/bin:${PATH}
+export PATH=$BREWPATH/sbin:$BREWPATH/bin:${HOME}/.local/bin:${PATH}
 
 #export SSH_AUTH_SOCK=~/.ssh/ssh-agent.$HOSTNAME.sock
 #ssh-add -l 2>/dev/null >/dev/null
