@@ -19,7 +19,8 @@ sudo apt update
 sudo apt upgrade -y
 
 # microk8s
-sudo snap install microk8s --classic --channel=latest/stable
+#sudo snap install microk8s --classic --channel=latest/stable
+sudo snap install microk8s --classic --channel=1.28/stable
 sudo usermod -a -G microk8s $USER
 
 # REBOOT
