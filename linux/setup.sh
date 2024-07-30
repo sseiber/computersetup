@@ -38,7 +38,7 @@ sudo apt install -y curl nano build-essential openssh-server net-tools jq golang
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
 # k9s
-k9s_version="0.32.5"
+k9s_version="v0.32.5"
 k9s_package="k9s_Linux_${arch}"
 wget https://github.com/derailed/k9s/releases/download/${k9s_version}/${k9s_package}.tar.gz
 tar -xf ${k9s_package}.tar.gz
@@ -46,7 +46,7 @@ mv k9s ${HOME}/.local/bin/k9s
 rm ${k9s_package}.tar.gz
 
 # manually install powerline-go
-powerline_go_version="v1.23"
+powerline_go_version="v1.24"
 powerline_go_package="powerline-go-linux-${arch}"
 curl -fsSLO https://github.com/justjanne/powerline-go/releases/download/${powerline_go_version}/${powerline_go_package}
 chmod +x ${powerline_go_package}
